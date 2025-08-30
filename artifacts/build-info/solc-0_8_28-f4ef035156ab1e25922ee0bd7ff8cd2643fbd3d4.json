@@ -1,6 +1,6 @@
 {
   "_format": "hh3-sol-build-info-1",
-  "id": "solc-0_8_28-cbf50cfa3d6043de5a1742d62d4df85d43e853f3",
+  "id": "solc-0_8_28-f4ef035156ab1e25922ee0bd7ff8cd2643fbd3d4",
   "solcVersion": "0.8.28",
   "solcLongVersion": "0.8.28+commit.7893614a",
   "userSourceNameMap": {
@@ -45,7 +45,7 @@
         "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v5.0.1) (utils/Context.sol)\n\npragma solidity ^0.8.20;\n\n/**\n * @dev Provides information about the current execution context, including the\n * sender of the transaction and its data. While these are generally available\n * via msg.sender and msg.data, they should not be accessed in such a direct\n * manner, since when dealing with meta-transactions the account sending and\n * paying for execution may not be the actual sender (as far as an application\n * is concerned).\n *\n * This contract is only required for intermediate, library-like contracts.\n */\nabstract contract Context {\n    function _msgSender() internal view virtual returns (address) {\n        return msg.sender;\n    }\n\n    function _msgData() internal view virtual returns (bytes calldata) {\n        return msg.data;\n    }\n\n    function _contextSuffixLength() internal view virtual returns (uint256) {\n        return 0;\n    }\n}\n"
       },
       "project/functions/contracts/TempContract.sol": {
-        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\nimport \"@openzeppelin/contracts/token/ERC20/ERC20.sol\";\r\n\r\ncontract PrimoCoin is ERC20 {\r\n\tconstructor() ERC20(\"PrimoCoin\", \"\") {\r\n\t\t_mint(msg.sender, 1000 * 10 ** decimals());\r\n\t}\r\n}\r\n"
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\nimport \"@openzeppelin/contracts/token/ERC20/ERC20.sol\";\n\ncontract PrimoCoin is ERC20 {\n    constructor() ERC20(\"PrimoCoin\", \"PRIM\") {\n        _mint(msg.sender, 1000000 * 10**18); // 1,000,000 with 18 decimals\n    }\n}"
       }
     }
   }
