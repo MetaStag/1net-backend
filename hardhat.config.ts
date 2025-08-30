@@ -37,6 +37,9 @@ const config: HardhatUserConfig = {
       accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
     },
   },
+  paths: {
+    sources: "./functions/contracts", // Update this to your contracts folder
+  },
 };
 
 export default config;

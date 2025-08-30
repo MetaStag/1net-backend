@@ -1,11 +1,10 @@
 {
   "_format": "hh3-sol-build-info-1",
-  "id": "solc-0_8_28-a423d612cb801ffe6d29602bb21e0c66f750cc4e",
+  "id": "solc-0_8_28-7e4758637dbf70546aba7e8bb4d447f5d4533d43",
   "solcVersion": "0.8.28",
   "solcLongVersion": "0.8.28+commit.7893614a",
   "userSourceNameMap": {
-    "contracts/Counter.sol": "project/contracts/Counter.sol",
-    "contracts/TempContract.sol": "project/contracts/TempContract.sol"
+    "functions/contracts/MyContract.sol": "project/functions/contracts/MyContract.sol"
   },
   "input": {
     "language": "Solidity",
@@ -45,11 +44,8 @@
       "npm/@openzeppelin/contracts@5.4.0/utils/Context.sol": {
         "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v5.0.1) (utils/Context.sol)\n\npragma solidity ^0.8.20;\n\n/**\n * @dev Provides information about the current execution context, including the\n * sender of the transaction and its data. While these are generally available\n * via msg.sender and msg.data, they should not be accessed in such a direct\n * manner, since when dealing with meta-transactions the account sending and\n * paying for execution may not be the actual sender (as far as an application\n * is concerned).\n *\n * This contract is only required for intermediate, library-like contracts.\n */\nabstract contract Context {\n    function _msgSender() internal view virtual returns (address) {\n        return msg.sender;\n    }\n\n    function _msgData() internal view virtual returns (bytes calldata) {\n        return msg.data;\n    }\n\n    function _contextSuffixLength() internal view virtual returns (uint256) {\n        return 0;\n    }\n}\n"
       },
-      "project/contracts/Counter.sol": {
-        "content": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.28;\n\ncontract Counter {\n  uint public x;\n\n  event Increment(uint by);\n\n  function inc() public {\n    x++;\n    emit Increment(1);\n  }\n\n  function incBy(uint by) public {\n    require(by > 0, \"incBy: increment should be positive\");\n    x += by;\n    emit Increment(by);\n  }\n}\n"
-      },
-      "project/contracts/TempContract.sol": {
-        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\nimport '@openzeppelin/contracts/token/ERC20/ERC20.sol';\n\ncontract PrimoCoin is ERC20 {\n    constructor() ERC20(\"PrimoCoin\", \"PrimoCoin\") {\n        _mint(msg.sender, 1000);\n    }\n}"
+      "project/functions/contracts/MyContract.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\nimport \"@openzeppelin/contracts/token/ERC20/ERC20.sol\";\r\n\r\ncontract PrimoCoin is ERC20 {\r\n    constructor() ERC20(\"PrimoCoin\", \"PrimoCoin\") {\r\n        _mint(msg.sender, 1000);\r\n    }\r\n}"
       }
     }
   }
