@@ -1,9 +1,5 @@
-import fs from 'fs';
-import path from 'path';
-
 // Load contract templates from templates.json
-const templatesPath = path.join(__dirname, 'templates.json');
-const contractTemplates = JSON.parse(fs.readFileSync(templatesPath, 'utf-8'));
+import contractTemplates from './templates.json' with {type: 'json'};
 
 // Helper to interpolate template string with variables
 function interpolate(template, vars) {
